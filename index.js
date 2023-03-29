@@ -442,29 +442,85 @@ for (let scoress of jambScore) {
 }
 console.log(total / scorer.length);
 //TO DO LIST
-let input = prompt("What do you want to accomplish for the day?");
-const todos = ["collect chicke eggs", "clean the house"];
-while (input !== "quit" && input !== "q") {
-  if (input === "list") {
-    console.log("************");
-    for (let i = 0; i < todos.length; i++) {
-      console.log(`${i}: ${todos[i]}`);
-    }
-  } else if (input === "new") {
-    const newTodo = prompt("Okay what is the new todo");
-    todos.push(newTodo);
-    console.log(`${newTodo} added to the list `);
-  } else if (input === "delete") {
-    const index = parseInt(
-      prompt("What are you trying to delete, enter index to delete")
-    );
-    if (Number.isNaN(index)) {
-      const deleted = todos.splice(index, 1);
-      console.log(`ok, deleted ${deleted[0]}`);
-    } else {
-      console.log("unknown Index");
-    }
-  }
-  input = prompt("What do you want to accomplish for the day?");
+// let input = prompt("What do you want to accomplish for the day?");
+// const todos = ["collect chicke eggs", "clean the house"];
+// while (input !== "quit" && input !== "q") {
+//   if (input === "list") {
+//     console.log("************");
+//     for (let i = 0; i < todos.length; i++) {
+//       console.log(`${i}: ${todos[i]}`);
+//     }
+//   } else if (input === "new") {
+//     const newTodo = prompt("Okay what is the new todo");
+//     todos.push(newTodo);
+//     console.log(`${newTodo} added to the list `);
+//   } else if (input === "delete") {
+//     const index = parseInt(
+//       prompt("What are you trying to delete, enter index to delete")
+//     );
+//     if (Number.isNaN(index)) {
+//       const deleted = todos.splice(index, 1);
+//       console.log(`ok, deleted ${deleted[0]}`);
+//     } else {
+//       console.log("unknown Index");
+//     }
+//   }
+//   input = prompt("What do you want to accomplish for the day?");
+// }
+// console.log("quit the app");
+
+//Functions
+//Working with Argument (The last of the big topics)
+function greet() {
+  console.log("Good Morning Ma");
 }
-console.log("quit the app");
+greet();
+//step 1(Define)
+function singSong() {
+  console.log("Miracle no dey tire Jesus");
+  console.log("To bless people no dey tire Jesus");
+  console.log("E don do am before");
+  console.log("E still dey do am again! chaii!");
+  console.log("Miracle no dey tire Jesus");
+}
+
+//step 2(Run / Call/ Execute)
+singSong();
+
+//Arguments; in JS is a basic way of sayimg input to a function;
+//Any thing inside the parameter is an argument
+function greeting(name) {
+  console.log(`Hi, ${name}!!`);
+}
+//when we call greet and past a value in it it's called an argument
+greeting("Busolami");
+
+//Multiple Argument
+function greetings(firstName, lastName) {
+  console.log(`Hey there, ${firstName} ${lastName[0]}.`);
+}
+//when we call greet and past a value in it it's called an argument
+greetings("Busolami", "Oluwabi");
+
+function repeat(str, numTimes) {
+  let result = "";
+  for (let i = 0; i < numTimes; i++) {
+    result += str;
+  }
+  console.log(result);
+}
+repeat("I love jesus ", 10);
+
+//Return statementends function execution and specifies the value to be returned by that function
+function multiple(num1, num2) {
+  return num1 * num2;
+}
+console.log(multiple(2, 5));
+
+function add(x, y) {
+  if (typeof x !== "number" || typeof y !== "number") {
+    return false;
+  }
+  let sum = x + y;
+  return sum;
+}
