@@ -441,3 +441,30 @@ for (let scoress of jambScore) {
   scorer += jambScore;
 }
 console.log(total / scorer.length);
+//TO DO LIST
+let input = prompt("What do you want to accomplish for the day?");
+const todos = ["collect chicke eggs", "clean the house"];
+while (input !== "quit" && input !== "q") {
+  if (input === "list") {
+    console.log("************");
+    for (let i = 0; i < todos.length; i++) {
+      console.log(`${i}: ${todos[i]}`);
+    }
+  } else if (input === "new") {
+    const newTodo = prompt("Okay what is the new todo");
+    todos.push(newTodo);
+    console.log(`${newTodo} added to the list `);
+  } else if (input === "delete") {
+    const index = parseInt(
+      prompt("What are you trying to delete, enter index to delete")
+    );
+    if (Number.isNaN(index)) {
+      const deleted = todos.splice(index, 1);
+      console.log(`ok, deleted ${deleted[0]}`);
+    } else {
+      console.log("unknown Index");
+    }
+  }
+  input = prompt("What do you want to accomplish for the day?");
+}
+console.log("quit the app");
