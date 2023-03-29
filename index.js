@@ -207,3 +207,237 @@ const comments = [
   },
 ];
 console.log(comments[1].text);
+//for loop synax
+// for (
+//     [initialExpression];
+//     [condition]; console.log this
+//     [incrementExpression]
+// )
+//  start at 0  stop at 10 add 1 each time
+for (let i = 0; i <= 10; i++) {
+  console.log("I'M IN A LOOP BODY!!!");
+  console.log(i);
+}
+//make a loop that even number from 0 to 20
+
+for (let i = 0; i <= 20; i++) {
+  if (i % 2 === 0) {
+    console.log(i);
+  }
+}
+//or
+for (let i = 1; i <= 20; i += 2) {
+  console.log(i);
+}
+
+//countdown
+for (let i = 100; i >= 0; i -= 10) {
+  console.log(i);
+}
+//looping over arrays
+
+const animal = [
+  "antelope",
+  "bat",
+  "cat",
+  "dog",
+  "elephant",
+  "fish",
+  "gorilla",
+  "homo sapien",
+  "iguna",
+  "jungle animals",
+  "kangaroo",
+  "lion",
+  "mammals",
+  "nest",
+  "organism",
+  "parrot",
+  "quake",
+  "rat",
+  "snake",
+  "tortoise",
+  "unicorn",
+  "vampire",
+  "whale",
+  "xanophobia",
+  "yal",
+  "zebra",
+];
+for (let i = 0; i < animal.length; i++) {
+  console.log(i, animal[i]);
+}
+for (let i = animal.length - 1; i; i--) {
+  console.log(i, animal[i]);
+}
+
+//nested loops
+for (let i = 1; i <= 10; i++) {
+  console.log(`i is: ${i}`);
+  for (let j = 0; j < 4; j++) {
+    console.log(`   j is ${j}`);
+  }
+}
+
+const seatingchart = [
+  ["Kristen", "Erika", "Namita"],
+  ["Geoffrey", "Juanita", "Antonio", "Kevin"],
+  ["Yuma", "Sakura", "Jack", "Erika"],
+];
+for (let i = 0; i < seatingchart.length; i++) {
+  const row = seatingchart[i];
+  console.log(row);
+  console.log(`ROW is ${i + 1}`);
+  for (let j = 0; j < row.length; j++) {
+    console.log(row[j]);
+  }
+}
+// for (let rows of seatingchart) {
+//   console.log(rows);
+// }
+const animalGroups = [
+  ["antelope", "bat", "cat", "dog"],
+  ["elephant", "fish", "gorilla", "homo sapien"],
+  ["iguna", "jungle animals", "kangaroo", "lion", "mammals"],
+  ["nest", "organism", "parrot", "quake"],
+];
+
+for (let i = 0; i < animalGroups.length; i++) {
+  // console.log(animalGroups[i]);
+  const rowCall = animalGroups[i];
+  for (let j = 0; j < rowCall.length; j++) {
+    console.log(rowCall[j]);
+  }
+}
+
+//while loop
+// let count = 0;
+// while (count < 10) {
+//   count++;
+//   console.log(count);
+// }
+// const secretCode = "BabyHippo";
+// let guess = prompt("enter secret code....");
+// while (guess !== secretCode) {
+//   guess = prompt("enter secret code....");
+// }
+// console.log("CONGRATS YOU GOT THE SECRET");
+
+//the break keyword4 is a way of exscaping a loop
+// let input = prompt("hey, say something!");
+// while (true) {
+//   input = prompt(input);
+//   if (input.toLowerCase() === "stop copying me") {
+//     break;
+//   }
+// }
+// console.log("OK YOU WIN");
+
+for (let i = 0; i < 100; i++) {
+  console.log(i);
+  if (i === 55) break;
+}
+
+//write a guess name
+// let maxNum = parseInt(prompt("Enter the maximum number!"));
+// //if there's not a maxnum maxnum is falsy
+// while (!maxNum) {
+//   maxNum = parseInt(prompt("Enter a valid number"));
+// }
+// const targetNum = Math.floor(Math.random() * maxNum) + 1;
+// // console.log(targetNum);
+
+// let guess = parseInt(prompt("Enter your first guess"));
+// let attempts = 1;
+// while (parseInt(guess) !== targetNum) {
+//   if (guess === "q") break;
+//   attempts++;
+//   if (guess > targetNum) {
+//     guess = prompt("Too high! Enter a new guess:");
+//   } else {
+//     guess = prompt("Too low! Enter a new guess:");
+//   }
+// }
+// if (guess === "q") {
+//   console.log("OK, YOU QUITT!!");
+// } else {
+//   console.log("CONGRATULATION YOU WIN");
+//   console.log(`You got it! It took you ${attempts} guesses`);
+// }
+
+//for of
+const friendsNames = [
+  "Fadekemi",
+  "Damola",
+  "Gift",
+  "Blessing",
+  "Marve",
+  "Oluwabisimi",
+  "Opeyemi",
+  "Turah",
+];
+for (let i = 0; i < friendsNames.length; i++) {
+  console.log(`visit reddit.com/r/${friendsNames[i]}`);
+}
+
+for (let names of friendsNames) {
+  console.log(`visit google.com/${names}`);
+}
+
+const groupsNames = [
+  ["Bunmi", "Nike", "Adeola", "Azeezat", "Oyin"],
+  ["Busolami", "Gift", "Marve", "Blessing"],
+  ["Mo", "Babyboi", "Dotun", "Bunmi Africa", "Oluchi", "Damilare"],
+  ["Tomiwa", "Dapo", "Olumba", "Artiste"],
+];
+// for (let i = 0; i < groupsNames.length; i++) {
+//   const rows = groupsNames[i];
+
+//   for (let i = 0; i < rows.length; i++) {
+//     console.log(rows[i]);
+//   }
+// }
+
+for (let rows of groupsNames) {
+  for (let student of rows) {
+    console.log(student);
+  }
+}
+
+for (let chat of "Hello World") {
+  console.log(chat);
+}
+
+const number = [1, 2, 3, 4, 5, 6, 7, 8, 9]; //DON'T CHANGE THIS LINE PLEASE!
+for (let num of number) {
+  console.log(num ** 2);
+}
+
+// const correctPassword = "BusolamiOluwabi";
+// let loginPassword = prompt("Enter a correct password");
+// while (loginPassword !== correctPassword) {
+//   loginPassword = prompt("Enter a correct password");
+// }
+// console.log("YOU'VE SUCCESFULLY LOG IN");
+
+//itering over object
+const testScore = {
+  math: 60,
+  phy: 56,
+  eng: 65,
+  chem: 76,
+};
+for (let subject in testScore) {
+  console.log(`${subject} scored ${testScore[subject]}`);
+}
+
+let totalscores = 0;
+for (let score of Object.values(testScore)) {
+  console.log((total += score));
+}
+let scorer = 0;
+let jambScore = Object.values(testScore);
+for (let scoress of jambScore) {
+  scorer += jambScore;
+}
+console.log(total / scorer.length);
