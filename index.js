@@ -516,7 +516,7 @@ function multiple(num1, num2) {
   return num1 * num2;
 }
 console.log(multiple(2, 5));
-
+//return is how we get value out of a function so that we can save them and caption them
 function add(x, y) {
   if (typeof x !== "number" || typeof y !== "number") {
     return false;
@@ -524,3 +524,231 @@ function add(x, y) {
   let sum = x + y;
   return sum;
 }
+
+function rant(message) {
+  console.log(`${message}`);
+  console.log(`${message}`);
+  console.log(`${message}`);
+}
+rant("I hate beef".toUpperCase());
+
+function isSnakeEyes(number1, number2) {
+  if (number1 === 1 && number2 === 1) {
+    console.log("Snake Eye!");
+  } else {
+    console.log("Not snake Eyes!");
+  }
+  //console.log(isSnakeEyes(6, 6));
+}
+
+//Higher Order Function
+//Function scope; variable "Visibility". The location where a variable is defined dictates where we have access to the variable
+/* function helpMe{}
+let msg = 'I'm on fire!
+msg;
+}
+msg//undefines meaning msg is scoped to thhe helpMe function*/
+let totalEggs = 0;
+
+function collectChickenEggs() {
+  totalEggs = 6;
+}
+console.log(totalEggs);
+collectChickenEggs();
+
+let bird = "Scarlet Macaw";
+
+function birdWatch() {
+  let bird = "Great Blue Heron";
+  console.log(bird);
+}
+console.log(bird);
+
+//what is printed to the console when this code runs
+let animals = "blue Whale";
+
+function observe() {
+  let animal = "Pajamas squid";
+  console.log(animal);
+}
+observe();
+
+//Another type of scope (block scope)
+let radius = 8;
+if (radius < 0) {
+  const PI = 3.14159;
+  let msg = "HIII";
+}
+console.log(radius);
+//PI & CIRC are scoped to block
+//for (let i = 0; i < array.length; i++) {
+//let msg = "I LOVE JESUS";
+// }
+//note that this only i and msg can only exist in the curly bracketand not outside
+
+//Lexical Scope;our function are access to the same stuffas the parent or grandparent
+function bankRobbery() {
+  const heroes = ["spiderman", "Batman", "Wolverine", "Black Panther"];
+
+  function cryForHelp() {
+    function inner() {
+      for (let hero of heroes) {
+        console.log(`Please help me ${hero.toUpperCase()}`);
+      }
+    }
+    inner();
+  }
+  cryForHelp();
+}
+
+function theOluwabiFamily() {
+  const familyName = [
+    "Dad",
+    "Mom",
+    "Mo'beleve",
+    "Tomiwa",
+    "Olubunmi",
+    "Busolami",
+    "Olamilekan",
+  ];
+
+  function familyMeeting() {
+    for (let meeting of familyName) {
+      console.log(
+        `THE MEETING IS DUE FOR THIS SATURDAY ${meeting.toUpperCase()}`
+      );
+    }
+  }
+  familyMeeting();
+}
+
+//function Expression is a way of defining a function
+//function expression is a way of storing a function in a variable
+//functions are values in JS you can store them, pass number
+const square = function (num) {
+  return num * num;
+};
+
+square(7);
+
+//HIGHER ORDER FUNCTION; is  fancy way of saying a functions that works with other functions;
+//they can: Accept ther functions as argument or Return a function
+let greets = function () {
+  console.log("HI");
+};
+greets();
+
+function callTwices(func) {
+  func();
+  func(); // invokinf a function / call
+}
+// callTwices();
+function callTenTimes(f) {
+  for (let i = 0; i < 10; i++) {
+    f();
+  }
+}
+
+function rollDies() {
+  const roll = Math.floor(Math.random() * 6) + 1;
+  console.log(roll);
+}
+console.log(callTwices(rollDies));
+
+// Returning Function
+function makeMysteryFunc() {
+  const rand = Math.random();
+  if (rand > 0.5) {
+    return function () {
+      console.log("CONGRATS I'M  A GOOD FUNCTION");
+      console.log("YOU WIN A MILLION DOLLARS");
+    };
+  } else {
+    return function () {
+      alert("YOU HAVE BEEN INFECTED BY A COMPUTER VIRUS");
+      alert("STOP TRYING TO CLOSE THIS WINDOW");
+      alert("STOP TRYING TO CLOSE THIS WINDOW");
+      alert("STOP TRYING TO CLOSE THIS WINDOW");
+      alert("STOP TRYING TO CLOSE THIS WINDOW");
+    };
+  }
+}
+
+//Function that generate a function
+function isBetweenFun(num) {
+  return num >= 50 && num <= 100;
+}
+
+function isBetween(num) {
+  if (num >= 45 && num <= 100) {
+    return true;
+  } else {
+    return false;
+  }
+}
+//factory function make a function
+function makeBetweenFunc(min, max) {
+  return function (nums) {
+    return nums >= min && nums <= max;
+  };
+}
+
+//  const testRange = function (nums) {
+//     return nums >= 100 && nums <= 200;
+// }
+
+//defining methods; we can add funtions as properties on objects.
+//we call them methods2; every mehod is a function
+//Every Method is a function and Every function is not a method
+const myMath = {
+  PI: 3.14159,
+  square: function (num) {
+    return num * num;
+  },
+  cube: function (num) {
+    return num ** 3;
+  },
+};
+// or
+
+const math = {
+  blah: "Hi",
+  add(x, y) {
+    return x + y;
+  },
+  multiply(x, y) {
+    return x * y;
+  },
+};
+math.add(50, 60);
+
+//This in methods
+const dog = {
+  name: "oldy",
+  color: "grey",
+  breed: "scottish fold",
+  bark() {
+    console.log(`${this.name} BARKSS`);
+  },
+};
+
+const dog2 = dog.bark;
+
+//Try/catch deal with errors in JS specificially catching errors and preventing them from breaking
+try {
+  hello.toUpperCase();
+} catch {
+  console.log("EROORRR!!!");
+}
+
+function yelll(msg) {
+  return msg.toUpperCase().repeat(3);
+}
+
+const squares = function (num) {
+  return num * Math.pow();
+};
+
+const squar = function (num) {
+  return num * num;
+};
